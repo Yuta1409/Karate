@@ -16,7 +16,7 @@ namespace PROJET_PPE2._1_KARATE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Frm_InscriptionMembre());
         }
     }
 }
