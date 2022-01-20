@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,11 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bdd.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_InscriptionMembre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_InscriptionMembre.Designer.cs">
+      <DependentUpon>Frm_InscriptionMembre.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_GestionEntraineur_AJ.cs">
       <SubType>Form</SubType>
@@ -61,9 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionEntraineur_AJ.resx">
       <DependentUpon>Frm_GestionEntraineur_AJ.cs</DependentUpon>
     </EmbeddedResource>
