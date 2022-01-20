@@ -239,7 +239,7 @@ namespace PROJET_PPE2._1_KARATE
             this.label1.TabIndex = 51;
             this.label1.Text = "Nom :";
             // 
-            // FrmInscriptionMembre
+            // Frm_InscriptionMembre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +267,7 @@ namespace PROJET_PPE2._1_KARATE
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "FrmInscriptionMembre";
+            this.Name = "Frm_InscriptionMembre";
             this.Text = "FrmInscriptionMembre";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
