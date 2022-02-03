@@ -21,7 +21,16 @@ namespace PROJET_PPE2._1_KARATE
 
         private void Cmd_Ajouter_Click(object sender, EventArgs e)
         {
-            
+            MySqlConnection conn = bdd.ConnectionBD();
+            conn.Open();
+
+            string sqlInscription = "INSERT INTO inscription (NUM_LICENCE, NUM_COMPETITION) VALUES (@NUM_LICENCE, @NUM_COMPETITION)";
+            MySqlCommand cmdInscription = new MySqlCommand(sqlInscription, conn);
+            string numLicence = Grid_Membre.SelectedRows[0].Cells[0].Value.ToString();
+            cmdInscription.Parameters.AddWithValue("@NUM_LICENCE", numLicence);
+            string numCompetition = Grid_Comp.SelectedRows[0].Cells[0].Value.ToString();
+            cmdInscription.Parameters.AddWithValue("@NUM_COMPETITION", numCompetition);
+            cmdInscription.ExecuteNonQuery();
         }
 
         private void Grid_Membre_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,7 +59,7 @@ namespace PROJET_PPE2._1_KARATE
             conn.Close();
 
             conn.Open();
-            string sqlComp = "SELECT NUM_COMPETITION, NUM_CLUB FROM competition";
+            string sqlComp = "SELECT NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION FROM competition";
             MySqlCommand cmdComp = new MySqlCommand(sqlComp, conn);
             MySqlDataReader readerComp = cmdComp.ExecuteReader();
 
@@ -58,11 +67,18 @@ namespace PROJET_PPE2._1_KARATE
             {
                 string NUM_COMPETITION = (readerComp["NUM_COMPETITION"].ToString());
                 string NUM_CLUB = (readerComp["NUM_CLUB"].ToString());
+                string DATE_COMPETITION = (readerComp["DATE_COMPETITION"].ToString());
 
-                Grid_Comp.Rows.Add(NUM_COMPETITION, NUM_CLUB);
+                Grid_Comp.Rows.Add(NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION);
 
             }
             conn.Close();
+        }
+
+        private void Cmd_SupprimerModifier_Click(object sender, EventArgs e)
+        {
+            Form Cmd_Option = new Frm_Modifier_Supprimer();
+            Cmd_Option.ShowDialog();
         }
     }
 }
