@@ -31,16 +31,18 @@ namespace PROJET_PPE2._1_KARATE
         {
             this.Cmd_Modifier = new System.Windows.Forms.Button();
             this.Cmd_Sup = new System.Windows.Forms.Button();
-            this.Grid_Modifier_Supprimer = new System.Windows.Forms.DataGridView();
+            this.Grid_Inscrip = new System.Windows.Forms.DataGridView();
             this.NUM_COMPETITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUM_LICENCE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOTE_GLOBALE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Modifier_Supprimer)).BeginInit();
+            this.txtInscrip = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Inscrip)).BeginInit();
             this.SuspendLayout();
             // 
             // Cmd_Modifier
             // 
-            this.Cmd_Modifier.Location = new System.Drawing.Point(181, 343);
+            this.Cmd_Modifier.Location = new System.Drawing.Point(319, 353);
             this.Cmd_Modifier.Name = "Cmd_Modifier";
             this.Cmd_Modifier.Size = new System.Drawing.Size(133, 55);
             this.Cmd_Modifier.TabIndex = 0;
@@ -50,7 +52,7 @@ namespace PROJET_PPE2._1_KARATE
             // 
             // Cmd_Sup
             // 
-            this.Cmd_Sup.Location = new System.Drawing.Point(430, 343);
+            this.Cmd_Sup.Location = new System.Drawing.Point(458, 353);
             this.Cmd_Sup.Name = "Cmd_Sup";
             this.Cmd_Sup.Size = new System.Drawing.Size(133, 55);
             this.Cmd_Sup.TabIndex = 1;
@@ -58,19 +60,19 @@ namespace PROJET_PPE2._1_KARATE
             this.Cmd_Sup.UseVisualStyleBackColor = true;
             this.Cmd_Sup.Click += new System.EventHandler(this.Cmd_Sup_Click);
             // 
-            // Grid_Modifier_Supprimer
+            // Grid_Inscrip
             // 
-            this.Grid_Modifier_Supprimer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_Modifier_Supprimer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Grid_Inscrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_Inscrip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NUM_COMPETITION,
             this.NUM_LICENCE,
             this.NOTE_GLOBALE});
-            this.Grid_Modifier_Supprimer.Location = new System.Drawing.Point(12, 12);
-            this.Grid_Modifier_Supprimer.Name = "Grid_Modifier_Supprimer";
-            this.Grid_Modifier_Supprimer.RowHeadersWidth = 51;
-            this.Grid_Modifier_Supprimer.RowTemplate.Height = 24;
-            this.Grid_Modifier_Supprimer.Size = new System.Drawing.Size(776, 325);
-            this.Grid_Modifier_Supprimer.TabIndex = 2;
+            this.Grid_Inscrip.Location = new System.Drawing.Point(12, 12);
+            this.Grid_Inscrip.Name = "Grid_Inscrip";
+            this.Grid_Inscrip.RowHeadersWidth = 51;
+            this.Grid_Inscrip.RowTemplate.Height = 24;
+            this.Grid_Inscrip.Size = new System.Drawing.Size(776, 325);
+            this.Grid_Inscrip.TabIndex = 2;
             // 
             // NUM_COMPETITION
             // 
@@ -93,19 +95,39 @@ namespace PROJET_PPE2._1_KARATE
             this.NOTE_GLOBALE.Name = "NOTE_GLOBALE";
             this.NOTE_GLOBALE.Width = 125;
             // 
+            // txtInscrip
+            // 
+            this.txtInscrip.Location = new System.Drawing.Point(180, 369);
+            this.txtInscrip.Multiline = true;
+            this.txtInscrip.Name = "txtInscrip";
+            this.txtInscrip.Size = new System.Drawing.Size(133, 29);
+            this.txtInscrip.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 372);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Numéro de compétition :";
+            // 
             // Frm_Modifier_Supprimer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Grid_Modifier_Supprimer);
+            this.ClientSize = new System.Drawing.Size(798, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtInscrip);
+            this.Controls.Add(this.Grid_Inscrip);
             this.Controls.Add(this.Cmd_Sup);
             this.Controls.Add(this.Cmd_Modifier);
             this.Name = "Frm_Modifier_Supprimer";
             this.Text = "Frm_Modifier_Supprimer";
             this.Load += new System.EventHandler(this.Frm_Modifier_Supprimer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Modifier_Supprimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Inscrip)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,9 +135,11 @@ namespace PROJET_PPE2._1_KARATE
 
         private System.Windows.Forms.Button Cmd_Modifier;
         private System.Windows.Forms.Button Cmd_Sup;
-        private System.Windows.Forms.DataGridView Grid_Modifier_Supprimer;
+        private System.Windows.Forms.DataGridView Grid_Inscrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUM_COMPETITION;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUM_LICENCE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOTE_GLOBALE;
+        private System.Windows.Forms.TextBox txtInscrip;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -42,18 +42,19 @@ namespace PROJET_PPE2._1_KARATE
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Cmd_Option = new System.Windows.Forms.Button();
+            this.Cmd_Modif_Sup = new System.Windows.Forms.Button();
+            this.Cmd_Detail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Membre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Comp)).BeginInit();
             this.SuspendLayout();
             // 
             // Cmd_Ajouter
             // 
-            this.Cmd_Ajouter.Location = new System.Drawing.Point(161, 451);
+            this.Cmd_Ajouter.Location = new System.Drawing.Point(758, 49);
             this.Cmd_Ajouter.Name = "Cmd_Ajouter";
-            this.Cmd_Ajouter.Size = new System.Drawing.Size(174, 74);
+            this.Cmd_Ajouter.Size = new System.Drawing.Size(366, 150);
             this.Cmd_Ajouter.TabIndex = 70;
-            this.Cmd_Ajouter.Text = "Ajouter";
+            this.Cmd_Ajouter.Text = "Ajouter une Inscription";
             this.Cmd_Ajouter.UseVisualStyleBackColor = true;
             this.Cmd_Ajouter.Click += new System.EventHandler(this.Cmd_Ajouter_Click);
             // 
@@ -61,7 +62,7 @@ namespace PROJET_PPE2._1_KARATE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell Nova Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 10);
+            this.label2.Location = new System.Drawing.Point(353, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(399, 27);
             this.label2.TabIndex = 69;
@@ -75,13 +76,12 @@ namespace PROJET_PPE2._1_KARATE
             this.column,
             this.Column2,
             this.Column3});
-            this.Grid_Membre.Location = new System.Drawing.Point(17, 79);
+            this.Grid_Membre.Location = new System.Drawing.Point(12, 49);
             this.Grid_Membre.Name = "Grid_Membre";
             this.Grid_Membre.RowHeadersWidth = 51;
             this.Grid_Membre.RowTemplate.Height = 24;
             this.Grid_Membre.Size = new System.Drawing.Size(740, 150);
             this.Grid_Membre.TabIndex = 71;
-            this.Grid_Membre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Membre_CellContentClick);
             // 
             // numLicence
             // 
@@ -118,7 +118,7 @@ namespace PROJET_PPE2._1_KARATE
             this.numCompetition,
             this.num_CLUB,
             this.Column1});
-            this.Grid_Comp.Location = new System.Drawing.Point(17, 270);
+            this.Grid_Comp.Location = new System.Drawing.Point(12, 221);
             this.Grid_Comp.Name = "Grid_Comp";
             this.Grid_Comp.RowHeadersWidth = 51;
             this.Grid_Comp.RowTemplate.Height = 24;
@@ -149,7 +149,7 @@ namespace PROJET_PPE2._1_KARATE
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 250);
+            this.label1.Location = new System.Drawing.Point(9, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 73;
@@ -158,21 +158,31 @@ namespace PROJET_PPE2._1_KARATE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 59);
+            this.label3.Location = new System.Drawing.Point(9, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 74;
             this.label3.Text = "Membre";
             // 
-            // Cmd_Option
+            // Cmd_Modif_Sup
             // 
-            this.Cmd_Option.Location = new System.Drawing.Point(430, 451);
-            this.Cmd_Option.Name = "Cmd_Option";
-            this.Cmd_Option.Size = new System.Drawing.Size(174, 74);
-            this.Cmd_Option.TabIndex = 75;
-            this.Cmd_Option.Text = "Option";
-            this.Cmd_Option.UseVisualStyleBackColor = true;
-            this.Cmd_Option.Click += new System.EventHandler(this.Cmd_SupprimerModifier_Click);
+            this.Cmd_Modif_Sup.Location = new System.Drawing.Point(758, 221);
+            this.Cmd_Modif_Sup.Name = "Cmd_Modif_Sup";
+            this.Cmd_Modif_Sup.Size = new System.Drawing.Size(366, 150);
+            this.Cmd_Modif_Sup.TabIndex = 79;
+            this.Cmd_Modif_Sup.Text = "Modification et Suppression d\'inscription";
+            this.Cmd_Modif_Sup.UseVisualStyleBackColor = true;
+            this.Cmd_Modif_Sup.Click += new System.EventHandler(this.Cmd_Modif_Sup_Click);
+            // 
+            // Cmd_Detail
+            // 
+            this.Cmd_Detail.Location = new System.Drawing.Point(247, 401);
+            this.Cmd_Detail.Name = "Cmd_Detail";
+            this.Cmd_Detail.Size = new System.Drawing.Size(156, 57);
+            this.Cmd_Detail.TabIndex = 80;
+            this.Cmd_Detail.Text = "Détail des compétitions";
+            this.Cmd_Detail.UseVisualStyleBackColor = true;
+            this.Cmd_Detail.Click += new System.EventHandler(this.Cmd_Detail_Click);
             // 
             // Frm_InscriptionMembre
             // 
@@ -180,7 +190,8 @@ namespace PROJET_PPE2._1_KARATE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1136, 573);
-            this.Controls.Add(this.Cmd_Option);
+            this.Controls.Add(this.Cmd_Detail);
+            this.Controls.Add(this.Cmd_Modif_Sup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Grid_Comp);
@@ -211,6 +222,7 @@ namespace PROJET_PPE2._1_KARATE
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Button Cmd_Option;
+        private System.Windows.Forms.Button Cmd_Modif_Sup;
+        private System.Windows.Forms.Button Cmd_Detail;
     }
 }

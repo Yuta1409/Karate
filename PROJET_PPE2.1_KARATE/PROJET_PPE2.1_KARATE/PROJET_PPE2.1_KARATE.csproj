@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bdd.cs" />
+    <Compile Include="Frm_Detail_Competition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Detail_Competition.Designer.cs">
+      <DependentUpon>Frm_Detail_Competition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_InscriptionMembre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Detail_Competition.resx">
+      <DependentUpon>Frm_Detail_Competition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_InscriptionMembre.resx">
       <DependentUpon>Frm_InscriptionMembre.cs</DependentUpon>
     </EmbeddedResource>

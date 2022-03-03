@@ -31,18 +31,14 @@ namespace PROJET_PPE2._1_KARATE
             string numCompetition = Grid_Comp.SelectedRows[0].Cells[0].Value.ToString();
             cmdInscription.Parameters.AddWithValue("@NUM_COMPETITION", numCompetition);
             cmdInscription.ExecuteNonQuery();
-        }
+            MessageBox.Show("L'inscription du membre à bien été ajoutée !");
 
-        private void Grid_Membre_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+            conn.Close();
         }
-
         private void Frm_InscriptionMembre_Load(object sender, EventArgs e)
         {
             MySqlConnection conn = bdd.ConnectionBD();
             conn.Open();
-
             string sqlMembre = "SELECT NUM_LICENCE,NUM_CLUB, NOM_MEMBRE, PRENOM_MEMBRE FROM membre";
             MySqlCommand cmdMembre = new MySqlCommand(sqlMembre, conn);
             MySqlDataReader readerMembre = cmdMembre.ExecuteReader();
@@ -74,11 +70,16 @@ namespace PROJET_PPE2._1_KARATE
             }
             conn.Close();
         }
-
-        private void Cmd_SupprimerModifier_Click(object sender, EventArgs e)
+        private void Cmd_Modif_Sup_Click(object sender, EventArgs e)
         {
-            Form Cmd_Option = new Frm_Modifier_Supprimer();
-            Cmd_Option.ShowDialog();
+            Form Cmd_Modif_Sup = new Frm_Modifier_Supprimer();
+            Cmd_Modif_Sup.ShowDialog();
+        }
+
+        private void Cmd_Detail_Click(object sender, EventArgs e)
+        {
+            Form Cmd_Detail = new Frm_Detail_Competition();
+            Cmd_Detail.ShowDialog();
         }
     }
 }
