@@ -21,54 +21,12 @@ namespace PROJET_PPE2._1_KARATE
 
         private void Cmd_Ajouter_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = bdd.ConnectionBD();
-            conn.Open();
-
-            string sqlInscription = "INSERT INTO inscription (NUM_LICENCE, NUM_COMPETITION) VALUES (@NUM_LICENCE, @NUM_COMPETITION)";
-            MySqlCommand cmdInscription = new MySqlCommand(sqlInscription, conn);
-            string numLicence = Grid_Membre.SelectedRows[0].Cells[0].Value.ToString();
-            cmdInscription.Parameters.AddWithValue("@NUM_LICENCE", numLicence);
-            string numCompetition = Grid_Comp.SelectedRows[0].Cells[0].Value.ToString();
-            cmdInscription.Parameters.AddWithValue("@NUM_COMPETITION", numCompetition);
-            cmdInscription.ExecuteNonQuery();
-            MessageBox.Show("L'inscription du membre à bien été ajoutée !");
-
-            conn.Close();
+            Form Cmd_Ajouter = new Frm_Inscription_Ajout();
+            Cmd_Ajouter.ShowDialog();
         }
         private void Frm_InscriptionMembre_Load(object sender, EventArgs e)
         {
-            MySqlConnection conn = bdd.ConnectionBD();
-            conn.Open();
-            string sqlMembre = "SELECT NUM_LICENCE,NUM_CLUB, NOM_MEMBRE, PRENOM_MEMBRE FROM membre";
-            MySqlCommand cmdMembre = new MySqlCommand(sqlMembre, conn);
-            MySqlDataReader readerMembre = cmdMembre.ExecuteReader();
-
-            while (readerMembre.Read())
-            {
-                string NUM_LICENCE = (readerMembre["NUM_LICENCE"].ToString());
-                string NUM_CLUB = (readerMembre["NUM_CLUB"].ToString());
-                string NOM_MEMBRE = (readerMembre["NOM_MEMBRE"].ToString());
-                string PRENOM_MEMBRE = (readerMembre["PRENOM_MEMBRE"].ToString());
-
-                Grid_Membre.Rows.Add(NUM_LICENCE, NUM_CLUB, NOM_MEMBRE, PRENOM_MEMBRE);
-            }
-            conn.Close();
-
-            conn.Open();
-            string sqlComp = "SELECT NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION FROM competition";
-            MySqlCommand cmdComp = new MySqlCommand(sqlComp, conn);
-            MySqlDataReader readerComp = cmdComp.ExecuteReader();
-
-            while (readerComp.Read())
-            {
-                string NUM_COMPETITION = (readerComp["NUM_COMPETITION"].ToString());
-                string NUM_CLUB = (readerComp["NUM_CLUB"].ToString());
-                string DATE_COMPETITION = (readerComp["DATE_COMPETITION"].ToString());
-
-                Grid_Comp.Rows.Add(NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION);
-
-            }
-            conn.Close();
+           
         }
         private void Cmd_Modif_Sup_Click(object sender, EventArgs e)
         {

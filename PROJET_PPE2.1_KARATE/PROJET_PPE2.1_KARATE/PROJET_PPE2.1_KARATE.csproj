@@ -66,6 +66,12 @@
     <Compile Include="Frm_GestionEntraineur_AJ.Designer.cs">
       <DependentUpon>Frm_GestionEntraineur_AJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Inscription_Ajout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inscription_Ajout.Designer.cs">
+      <DependentUpon>Frm_Inscription_Ajout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Modifier_Supprimer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionEntraineur_AJ.resx">
       <DependentUpon>Frm_GestionEntraineur_AJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inscription_Ajout.resx">
+      <DependentUpon>Frm_Inscription_Ajout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Modifier_Supprimer.resx">
       <DependentUpon>Frm_Modifier_Supprimer.cs</DependentUpon>
