@@ -16,6 +16,15 @@ namespace PROJET_PPE2._1_KARATE
         public Frm_Detail_Competition()
         {
             InitializeComponent();
+
+            MySqlConnection conn = bdd.ConnectionBD();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT NUM_COMPETITION FROM competition", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader["NUM_COMPETITION"]);
+            }
         }
 
         private void Grid_Detail_Comp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -25,21 +34,30 @@ namespace PROJET_PPE2._1_KARATE
 
         private void Frm_Detail_Competition_Load(object sender, EventArgs e)
         {
+           
+
+        }
+
+        private void CmdDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Grid_Recherche.Rows.Clear();
             MySqlConnection conn = bdd.ConnectionBD();
-
             conn.Open();
-
-            string sqlDetailComp = "SELECT NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION FROM competition";
-            MySqlCommand cmdDetailComp = new MySqlCommand(sqlDetailComp, conn);
-            MySqlDataReader readerDetailComp = cmdDetailComp.ExecuteReader();
-
-            while (readerDetailComp.Read())
+            MySqlCommand oui = new MySqlCommand("SELECT NUM_COMPETITION,NUM_LICENCE,NOTE_GLOBALE FROM inscription WHERE NUM_COMPETITION = @param", conn);
+            oui.Parameters.AddWithValue("@param", comboBox1.Text);
+            MySqlDataReader non = oui.ExecuteReader();
+            while (non.Read())
             {
-                string NUM_COMPETITION = (readerDetailComp["NUM_COMPETITION"].ToString());
-                string NUM_CLUB = (readerDetailComp["NUM_CLUB"].ToString());
-                string DATE_COMPETITION = (readerDetailComp["DATE_COMPETITION"].ToString());
+                string NUM_COMPETITION = (non["NUM_COMPETITION"].ToString());
+                string NUM_LICENCE = (non["NUM_LICENCE"].ToString());
+                string NOTE_GLOBALE = (non["NOTE_GLOBALE"].ToString());
 
-                Grid_Detail_Comp.Rows.Add(NUM_COMPETITION, NUM_CLUB, DATE_COMPETITION);
+                Grid_Recherche.Rows.Add(NUM_COMPETITION, NUM_LICENCE, NOTE_GLOBALE);
             }
             conn.Close();
         }

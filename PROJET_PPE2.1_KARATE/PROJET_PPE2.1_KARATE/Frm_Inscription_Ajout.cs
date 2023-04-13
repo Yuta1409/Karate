@@ -30,7 +30,17 @@ namespace PROJET_PPE2._1_KARATE
             string numCompetition = Grid_Comp.SelectedRows[0].Cells[0].Value.ToString();
             cmdInscription.Parameters.AddWithValue("@NUM_COMPETITION", numCompetition);
             cmdInscription.ExecuteNonQuery();
-            MessageBox.Show("L'inscription du membre à bien été ajoutée !");
+
+            try
+            {
+                cmdInscription.ExecuteNonQuery();
+                MessageBox.Show("L'inscription du membre à bien été ajoutée !");
+            }
+            catch(MySqlException a)
+            {
+                MessageBox.Show("Impossible d'ajouter une nouvelle isncription déjà existante !");
+            }
+            
 
             conn.Close();
         }
